@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+<import resource="persistence.xml"/>
+
+    <!--
+    <mvc:default-servlet-handler/>
+
+
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="org.codeforall"/>
+
+
+-->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="emFactory"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- BEANS CREATION  -->
+
+    <bean id="dao" class="org.codeforall.daos.Dao"/>
+
+    <bean id="service" class="org.codeforall.services.Service">
+        <property name="dao" ref="dao"/>
+    </bean>
+
+    <bean id="controller" class="org.codeforall.controllers.Controller">
+        <property name="service" ref="service"/>
+    </bean>
+
+</beans>
