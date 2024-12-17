@@ -11,6 +11,8 @@ public class Dao {
 
     private EntityManager em;
 
+
+
     public List<Family> read(){
         TypedQuery<Family> query = em.createQuery("SELECT family FROM Family family", Family.class);
         return query.getResultList();

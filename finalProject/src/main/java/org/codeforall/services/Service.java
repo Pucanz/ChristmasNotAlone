@@ -10,6 +10,8 @@ import java.util.List;
 public class Service {
 
     private Dao dao;
+
+    //public Integer getFamilyId(){ return dao.findById();}
     @Transactional
     public List<Family> listFamily(){ return dao.read();}
     @Transactional

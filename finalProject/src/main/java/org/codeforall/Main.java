@@ -11,7 +11,7 @@ public class Main {
     ApplicationContext context = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/spring/spring-config.xml");
     Controller controller = context.getBean("controller", Controller.class);
 
-    controller.testFamily();
+    //controller.testFamily();
     controller.start();
     }
 }

@@ -23,6 +23,10 @@ public class Controller {
         service.addFamily(abilios);
     }
 
+    public void addFamily(Family family){
+        service.addFamily(family);
+    }
+
     public void setService(Service service) {
         this.service = service;
     }

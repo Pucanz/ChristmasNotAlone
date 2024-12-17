@@ -16,7 +16,6 @@ public class Family {
     private String pets;
     private String meal;
     private String description;
-
     private boolean available;
 
 

@@ -76,6 +76,24 @@
             <scope>provided</scope> <!-- tomcat is the one that has this dependency, so if you run this in the main, its normal that this fails -->
         </dependency>
 
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+            <version>3.0.8.RELEASE</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
