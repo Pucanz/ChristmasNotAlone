@@ -2,7 +2,7 @@ package org.codeforall.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Family")
 @Table(name = "family")
 public class Family {
 

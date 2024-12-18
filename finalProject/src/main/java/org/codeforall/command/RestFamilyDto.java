@@ -1,19 +1,36 @@
 package org.codeforall.command;
 
 
-import com.sun.istack.internal.NotNull;
+import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.*;
+
+@Service
 public class RestFamilyDto {
     private Integer id;
 
     @NotNull(message = "First name is mandatory")
     @NotBlank(message = "First name is mandatory")
+    @Size(min=3, max=64)
     private String familyName;
+    @Pattern(regexp = "^\\+?[0-9]*$", message = "phone has invalid characters")
+    @Size(min=9, max=16)
     private String phone;
+    @Email
     private String email;
+
+    @Pattern(regexp = "^\\d{4}-\\d{3}$", message = "zip-code invalid")
     private String zipCode;
+    @NotNull(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
+    @Size(min=3, max=64)
     private String pets;
+    @NotNull(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
+    @Size(min=3, max=64)
     private String meal;
+    @NotBlank(message = "You should describe your a little bit your family(e.g: hobbies, meals, pets, etc")
+    @Size(max= 10000)
     private String description;
     private boolean available;
 

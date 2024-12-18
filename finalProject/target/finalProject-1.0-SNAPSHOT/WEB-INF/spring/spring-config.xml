@@ -26,16 +26,8 @@
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- BEANS CREATION  -->
 
-    <bean id="dao" class="org.codeforall.daos.Dao"/>
 
-    <bean id="service" class="org.codeforall.services.Service">
-        <property name="dao" ref="dao"/>
-    </bean>
 
-    <bean id="controller" class="org.codeforall.controllers.Controller">
-        <property name="service" ref="service"/>
-    </bean>
 
 </beans>
