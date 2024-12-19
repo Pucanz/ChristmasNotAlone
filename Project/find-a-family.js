@@ -28,14 +28,16 @@ window.onload = async function () {
           <td>${fam.pets}</td>
           <td>${fam.meal}</td>
           <td>${fam.available}</td>
-          <td>${fam.description}</td>
           <td>
+            <a href="getInTouch.html?id=${fam.id}">   
+            <i id="email-${fam.id}" class="bi bi-envelope-at"></i></a></td>
         </tr>
           `;
          table.innerHTML += row;
     });
   }
 
+//Filter for serching
   document.getElementById('filterInput').addEventListener('input', function() {
     let filter = this.value.toLowerCase();
     let table = document.getElementById('familyTable');
@@ -57,4 +59,3 @@ window.onload = async function () {
         }
     }
 });
-

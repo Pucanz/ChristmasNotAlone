@@ -24,9 +24,21 @@ public class RestFamilyController {
     private FamilyToRestFamilyDto familyToRestFamilyDto;
     private RestFamilyDtoToFamily restFamilyDtoToFamily;
 
+    @RequestMapping(method = RequestMethod.GET, value = {"/{id}"})
+    public ResponseEntity<RestFamilyDto> listFamily(@PathVariable Integer id) {
+        Family family = null;
+
+        try{
+            family = familyService.getFamilyId(id);
+        } catch(Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(familyToRestFamilyDto.convert(family), HttpStatus.ACCEPTED);
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
     public ResponseEntity<List<RestFamilyDto>> listFamily() {
-        System.out.println("LIST BEING CALLED");
         return new ResponseEntity<>(familyToRestFamilyDto.convert(familyService.listFamily()), HttpStatus.ACCEPTED);
     }
 
@@ -34,8 +46,6 @@ public class RestFamilyController {
     public ResponseEntity<?> addFamily(@Valid @RequestBody RestFamilyDto restFamilyDto){
 
         Family family = restFamilyDtoToFamily.convert(restFamilyDto);
-        System.out.println("Controller addFamily is called with " + restFamilyDto.getFamilyName());
-        System.out.println("It converted to " + family.getFamilyName());
 
         Family savedFamily = familyService.addFamily(family);
 

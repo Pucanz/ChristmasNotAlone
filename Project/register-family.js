@@ -1,5 +1,3 @@
-
-
 async function submitData(event){
     event.preventDefault();
 
@@ -27,11 +25,12 @@ async function submitData(event){
 
         if (response.ok){
             const responseData = await response.json();
-            console.log("Object added successfully:", responseData);
-            alert("Object added successfully");
+            console.log("Thank you for your registration. Mery Christmas!", responseData);
+            alert("Thank you for your registration. Mery Christmas!");
+            window.location.href = "/home.html";
         } else {
             console.error("Error adding object:", response.statusText);
-            alert("Failed to add object!");
+            alert("Please, check your information again.");
         }
     } catch (error){
         console.log(response);

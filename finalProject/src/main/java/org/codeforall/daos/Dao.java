@@ -3,7 +3,6 @@ package org.codeforall.daos;
 import org.codeforall.model.Family;
 import org.codeforall.services.FamilyService;
 import org.springframework.stereotype.Component;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
