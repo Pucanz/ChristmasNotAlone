@@ -38,7 +38,7 @@ btnNav.forEach((btn, index) => {
     })
 })
 /*Next slider auto*/
-let autoSlide = setInterval(nextSlide, 5000);
+let autoSlide = setInterval(nextSlide, 10000);
 
 
 

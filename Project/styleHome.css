@@ -132,15 +132,15 @@
 .slider .slider-box.active p {
     transform: translateY(60px);
     opacity: 0;
-    animation: animatedText .5s ease-in-out .7s forwards;
+    animation: animatedText .3s ease-in-out 0.7s forwards;
 }
 
 .slider .slider-box.active h2 {
-    animation-delay: 5s;
+    animation-delay: 1s;
 }
 
 .slider .slider-box.active p {
-    animation-delay: 5s;
+    animation-delay: 1s;
 }
 
 .slider-container .slider-box.active {
