@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/ChristmasNotAlone/";
+const API_URL = "http://192.168.10.195:8080/ChristmasNotAlone/";
 window.onload = async function () {
   
  await getCustomers();

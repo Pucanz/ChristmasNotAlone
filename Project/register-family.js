@@ -12,7 +12,7 @@ async function submitData(event){
         available: document.getElementById("available").value,
     };
     try {
-        const response = await fetch('http://localhost:8080/ChristmasNotAlone/', {
+        const response = await fetch('http://192.168.10.195:8080/ChristmasNotAlone/', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',
